@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Övning</title>
+</head>
+<body ng-app="carApp">
+
+    <h1>AngularJS - Övning<h1>
+
+<div ng-controller="carCtrl">
+
+<table>
+    <tr>
+        <th>RegNr</th>
+        <th>Modell</th>
+    </tr>
+        <tr ng-repeat="c in cars">
+            <td>{{c.RegNr}}</td>
+            <td>{{c.Modell}}</td>
+        </td>
+</table>
+
+</div>
+
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script>
+    
+    // Skapa en modul
+    let app = angular.module("carApp", []);
+
+    // Skapa en controller
+    app.controller('carCtrl', function($scope){
+            $scope.cars = [
+                {
+                    RegNr : "ABC123",
+                    Modell : "Volvo XC90"
+                },
+                {
+                    RegNr : "XYZ234",
+                    Modell : "Volvo XC40"
+                },
+                {
+                    RegNr : "BCG789",
+                    Modell : "Volvo V70"
+                }
+            ]
+});
+
+
+
+    </script>
+
+</body>
+</html>

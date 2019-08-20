@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo 2</title>
+</head>
+
+<body>
+
+    <h1>jQuery - Demo 2</h1>
+    <h2>Selektorer (Selectors)</h2>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, nihil?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, nihil?</p>
+
+    <p id="#demo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, nihil?</p>
+
+    <p class="demo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, totam!</p>
+    <p class="demo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, totam!</p>
+
+    <h3>Demo</h3>
+    <h3>Demo</h3>
+    <h4>Demo</h4>
+    <h4>Demo</h4>
+
+    <div id="header">Header</div>
+
+    <ul>
+        <li><a href="#">Ta bort alla länkar som finns i en lista</a></li>
+        <li><a href="#">Ta bort alla länkar som finns i en lista</a></li>
+    </ul>
+
+    <a href="#">Behåll alla länkar som finns utanför listan</a>
+
+    <h3>Child combinators</h3>
+    <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam ab aperiam magnam iusto id veritatis similique
+            ex expedita, adipisci et tempore, ducimus velit, repudiandae consectetur quidem ipsum. Sequi, architecto
+            voluptatem?</p>
+        <section>
+            <p>P som barnbarn till div</p>
+            <p>P som barnbarn till div</p>
+            <p>P som barnbarn till div</p>
+        </section>
+    </div>
+    <p>P direkt under div</p>
+    <p>P direkt under div</p>
+    <p>P direkt under div</p>
+
+    <h3>Sibling combinators</h3>
+    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur at maiores accusamus, illo temporibus iste
+        rerum nesciunt ab totam! Officiis nobis illo expedita aliquid ipsum pariatur libero labore? Unde, reiciendis!
+    </div>
+    <p>P är syskon till div, ligger direkt efter div</p>
+    <p>P som inte ligger efter div</p>
+
+    <h3>Subsequent-sibling combinator</h3>
+    <p>Detta p ligger före en article-tagg (väljs ej).</p>
+    <article>
+        En div.
+    </article>
+    <p>P efter en article-tagg</p>
+    <article>
+        <p>P inne i en article-tagg</p>
+    </article>
+    <p>Flera p efter en article-tagg (syskon)</p>
+    <p>Flera p efter en article-tagg (syskon)</p>
+    <p>Flera p efter en article-tagg (syskon)</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-demo-02.js"></script>
+</body>
+
+</html>

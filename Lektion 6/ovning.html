@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage Demo</title>
+
+<style>
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 10px;
+}
+
+th{
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+<body>
+   
+    <h1>Local Storage Demo</h1>
+    <h3>Ange ditt namn</h3>
+    <input type="text" id="name">
+    <button id="save">Spara</button>
+    <p id="yourName"></p>
+
+<script>
+
+    let myBtn = document.getElementById('save');
+    myBtn.addEventListener('click', saveName);
+    let name = document.getElementById('name');
+    let yourName = document.getElementById('yourName')
+
+    function saveName(){
+        console.log(name.value);
+        console.log(typeof name);
+        localStorage.setItem('name', name.value);
+        console.log(localStorage);
+        yourName.innerHTML = name.value;
+    }
+    yourName.innerHTML = localStorage.getItem('name');
+
+
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Class Pattern</title>
+</head>
+<body>
+
+    <h1>Factory Class Pattern</h1>
+
+    
+<script>
+    /*
+    // Functional Class Pattern
+    // birthday är en sträng. t.ex 19730202
+    function User(name, birthday){
+        this.sayHi = function(){
+            return `Hello ${name}, age: ${calcAge()}`;
+        }
+
+        // En privat metod som beräknar ålder
+        function calcAge(){
+            let birthDate = new Date(birthday);
+            return new Date().getFullYear() - birthDate.getFullYear;
+        }
+
+    
+        // En factory returnerar publika metoder
+        // Varje objekt får kopior på alla dessa metoder, onödigt
+        return{
+            sayHi(){
+                return `Hello ${name}, age: ${calcAge()}`;
+            }
+        }   
+    }
+
+
+    // Skapa objekt av klassen User
+    let user = User('Daniel');
+    let john = User('John');
+
+    console.log(user);
+    console.log(john);
+
+    // Privata egenskaper
+    // console.log(user.name); // undefined - mycket bra (inkapsling)
+    
+    // Publika egenskaper
+    // user.name = 'Kalle Anka'; // Skapar en helt ny egenskap
+    // console.log(user.name);
+
+    // Publika metoder
+    // console.log(user.sayHi());
+    // console.log(john.sayHi());
+
+    // Privata metoder
+    let user2 = new User('Daniel', '1988 12 21');
+    console.log(user2.sayHi());
+
+    // console.log(user2.sayHi()); // TypeError: user2.calcAge is not a function
+
+
+    // Skapa eget bibliotek    
+
+        */
+</script>
+</body>
+</html>

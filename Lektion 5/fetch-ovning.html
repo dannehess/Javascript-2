@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <meta charset="UTF-8">
+    <title>Fetch Övning</title>
+
+<style>
+th{
+    font-weight: bold;
+}
+
+td{
+    border-bottom: 1px solid black;
+    padding: 4px;
+}
+
+.person-card{
+    padding: 20px;
+    border: 1px solid black;
+}
+
+</style>
+
+
+</head>
+
+<body>
+    <h1>Fetch API - Övning</h1>
+    <div id="users"></div>
+    <div id="demo3"></div>
+
+    <div id="users4"></div>
+    
+    <script>
+    
+    fetch('https://jsonplaceholder.typicode.com/users/')
+        .then(resp => resp.json())
+        .then(json => showUsers(json))
+        .catch(err => console.log(err))
+
+        let table = '';
+        
+        function showUsers(users){
+            const div = document.getElementById('users');
+            let result = '';
+            console.log(users);
+            // OBS! users är en array (som vi fått från APIet)
+            users.forEach(obj => result += obj.name + '<br');
+            div.innerHTML = result;
+
+            result = `
+                        <table>
+                            <tr>
+                                <td>NAMN</td>            
+                                <td>EMAIL</td>    
+                                </tr>        
+            `;
+
+            users.forEach(user => result += `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+            `);
+        
+            div.innerHTML = result;
+                }
+
+            // Visa adressetiketter
+            users.forEach(user => {
+                result += `<div>
+                        DEMO    
+                    </div>`;
+            });
+
+            users4.innerHTML = result;
+            
+
+
+/*
+
+    fetch('https://jsonplaceholder.typicode.com/users/')
+        .then(resp => resp.json())
+        .then(json => showUsers(json))
+        .catch(err => console.log(err))
+
+        function showUsers(users){
+            const div = document.getElementById('users');
+            let result = '';
+            console.log(users);
+            // OBS! users är en array (som vi fått från APIet)
+            users.forEach(obj => result += obj.name + '<br>')
+                div.innerHTML = result;
+        }
+
+*/
+
+    </script>
+
+</body>
+</html>

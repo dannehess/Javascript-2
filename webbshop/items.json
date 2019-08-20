@@ -1,0 +1,26 @@
+{
+    "items": [{
+        "id": 1,
+        "name": "Vara 1",
+        "description": "Bra vara",
+        "price": 1000
+    },
+    {
+        "id": 2,
+        "name": "Vara 2",
+        "description": "Bättre vara",
+        "price": 2000
+    },
+    {
+        "id": 3,
+        "name": "Vara 3",
+        "description": "Jättebra vara",
+        "price": 3000
+    },
+    {
+        "id": 4,
+        "name": "Vara 4",
+        "description": "Superbra vara",
+        "price": 4000
+    }]
+}

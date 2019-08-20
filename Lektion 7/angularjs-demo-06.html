@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Demo 6</title>
+</head>
+
+<body>
+
+    <h1>Angular JS Demo 6</h1>
+    <h2>ng-init - Exempel 4</h2>
+    <h2>Skapa en array med ng-init</h2>
+
+    <div ng-app>
+
+        <div ng-init="months=['Jan', 'Feb', 'Mar']">
+            <!--
+                Iterera över en array med ng-repeat
+            -->
+            <ul>
+            <li ng-repeat="element in months">{{element}}</li>
+            </ul>
+
+
+            <table>
+                <tr>
+                    <td ng-repeat="m in months">{{m}}</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+</body>

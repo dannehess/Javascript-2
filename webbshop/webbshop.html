@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Webbshop</title>
+</head>
+<body>
+    
+<h1>Varor</h1>
+
+<div id="content"></div>
+
+    <script>
+
+ let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    $(document).ready(function(){
+        
+let html = '';
+const $content = $('#content');
+$.getJSON('items.json', data => {
+        
+    $.each(data, (items, products) => {
+        html += `<h1>Produkter</h1>
+        <table>
+            <tr>
+            <td>ID</td>
+            <td>NAMN</td>
+            <td>BESKRIVNING</td>
+            </tr>`;
+
+    $.each(products, (i, prod) => {
+let $id = products[i].id;
+let $name = products[i].name;
+let $description = products[i].description;
+let $price = products[i].price;
+
+        html += `
+
+            <tr>
+            <td>${$id}</td>
+            <td>${$name}</td>
+            <td>${$description}</td>
+            <td>${$price}</td>
+            <td><button data-id="${$id}">Lägg till</button></td>
+            </tr>
+            
+        `;
+        let sum = `${products[i].price * 1000}</h2>`;
+});
+
+
+html += `</table><h1>Summa: 
+</h1>`;
+    $content.html(html);
+});
+    });
+
+    $content.on('click', 'button', addProduct);
+    }); // ready
+    function addProduct() {
+  // Tar attributet data-id från knappen som triggat funktionen och omvandlar värdet till Number
+  const id = parseInt($(this).attr('data-id'));
+  // Iterera över cart
+  for (let i = 0; i <= cart.length; i++) {
+    // Om cart innehåller nåt och produkt-id hittas i cart, öka kvantitet, avsluta loop
+    if (cart.length && id === cart[i].id) {
+      cart[i].qty++;
+      break;
+    }
+    // Om id inte hittas och vi har kommit till slutet av cart eller om cart är tom, lägg till produkten, avsluta loop
+    else if (i === cart.length - 1 || cart.length === 0) {
+      cart.push({ id: id, qty: 1 });
+      break;
+    }
+  }
+  localStorage.setItem('cart', JSON.stringify(cart)); // Uppdatera localStorage
+    };
+
+    </script>
+</body>
+</html>

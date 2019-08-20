@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exempel 1</title>
+</head>
+<body>
+    
+
+<!--
+    https://tylermcginnis.com/
+
+    Hoisting
+    Under "Creation Phase" flyttas alla deklarationer högst upp,
+    alltså både deklarationer av variabler och funktioner.
+    Det kallas Hoisting i JavaScript.
+
+    console.log(x); // undefined (Orsakar buggar)
+    var x = 5;      // OBS! var
+    console.log(x); // 5
+
+    För att lösa problemet med variabel-hoisting
+    Använd alltid let eller const istället för var
+
+    console.log(x);
+    // x is not defined
+    let x = 5;
+-->
+
+<script>
+
+let course1 = {
+    title: "JavaScript",
+    students : ["Mahmud", "Kalle", "Erik"],
+    info: function(){
+        this.students.forEach(function (s){
+            console.log(s + ' läser ' + this.title);
+        
+        });
+    }
+};
+course1.info();
+
+console.log("-----------------------------");
+
+let course = {
+    title: "JavaScript",
+    students : ["Mahmud", "Kalle", "Erik"],
+    info: function(){
+        let titel = this.title;
+        this.students.forEach(function (s){
+        console.log(s + ' läser ' + titel);
+        });
+    }
+};
+course.info();
+
+</script>
+
+</body>
+</html>

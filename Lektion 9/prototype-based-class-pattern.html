@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Based Class Pattern</title>
+</head>
+<body>
+
+    <h1>Prototype Based Class Pattern</h1>
+
+    
+<script>
+
+// Prototype-based Class Pattern
+// Prototype lagrar/hanterar data
+function User(name, birthday){
+    this._name = name;
+    this._birthday = birthday;
+}
+/*
+// Lägg till en ny metod i prototypen User
+User.prototype.sayHi = function(){
+    return `Hello ${this._name}`;
+};
+
+// Skapa objekt av prototypen User
+let user = new User('Daniel', '1988 12 21');
+console.log(user);
+console.log(user.sayHi());
+console.log(user._name);
+
+// Arv (inheritance)
+// Alla objekt i JS ärver från Object (OBS! Stort O)
+// Object är en bas-klass (superklass, bas-prototype)
+// Vi har tillgång till alla metoder som finns i prototypen Object
+//console.log(user.hasOwnPropery('_name')); // true
+// console.log(user.hasOwnPropery('_age')); // false
+
+
+/*
+// Lägg till en publik metod i prototypen User
+User. prototype.sayHi = function(){
+    return `Hello ${this._name}, Age: ${this._calcAge()}`;
+}
+
+// Lägg till en privat metod i prototypen User
+User.prototype._calcAge = function(){
+    let birthDate = new Date(this._birthday);
+    return new Date().getFullYear() - birthDate.getFullYear();
+}
+*/
+
+// Övning
+// 1. Skapa en konstruktor som beskriver en punkt i en
+// tvådimensionell värld.
+// 2. Skapa en metod i prototypen som beräknar avståndet
+// mellan två punkter.
+// 3. Skapa två punkter (två objekt).
+// 4. Beräkna avstånder mellan punkterna
+
+function coordinates(punktonex, punktoney, punkttwox, punkttwoy){
+    this._punktonex = punktonex;
+    this._punktoney = punktoney;
+    this._punkttwox = punkttwox;
+    this._punkttwoy = punkttwoy;
+}
+    User.prototype._getCoordinates = function(){
+        return `X: ${punktonex - this._punkttwox} Y: ${this_punktoney - this_punktwoy}`; 
+    }; 
+
+    let punktonex1 = new coordinates(23);
+    let punktoney2 = new coordinates(33);
+    let punkttwox3 = new coordinates(65);
+    let punkttwoy4 = new coordinates(99);
+    console.log(punktonex1);
+    console.log(punktoney2);
+    console.log(punkttwox3);
+    console.log(punkttwoy4);
+
+
+
+    
+</script>
+</body>
+</html>

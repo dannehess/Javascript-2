@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+
+<button id="getText">Hämta text</button>
+<button id="getUsers">Hämta användare</button>
+<div id="output"></div>
+
+<br><br>
+
+<label for="name">Namn</label><br>
+<input type="text" id="name"><br>
+<label for="message">Message</label><br>
+<textarea id="message"></textarea><br>
+<input type="submit" id="submit" value="skicka">
+<p id="ares"></p>
+
+<script>
+
+document.getElementById('submit').addEventListener('click', addPost);
+
+function addPost(e){
+    e.preventDefault();
+    let a = document.getElementById('name').value;
+    let ares = document.getElementById('ares').innerHTML = a;
+    console.log(a);
+    let b = document.getElementById('message').value;
+    console.log(b);
+}
+
+
+
+document.getElementById('getText').addEventListener('click', getText);
+// document.getElementById('getUsers').addEventListener('click', getText);
+
+function getText(){
+    fetch('sample.txt')
+    .then((res) => res.text())
+    .then((data) => {
+        document.getElementById('output').innerHTML = data;
+    })
+}
+
+function getUsers(){
+    fetch('users.json')
+    .then((res) => res.json())
+    .then((data) => {
+        let output = '<h2>USERS</h2>';
+        data.forEach(function(user){
+            output += `
+            <ul>
+            <li>ID: ${user.id}</li>
+            <li>Name: ${user.name}</li>
+            <li>Email: ${user.email}</li>
+            </ul>
+            `;
+        });
+        document.getElementById('output').innerHTML = output;
+    })
+    }
+    
+    
+
+</script>
+
+</body>
+</html>

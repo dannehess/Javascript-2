@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage Demo</title>
+
+<style>
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 10px;
+}
+
+th{
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+<body>
+   
+    <h1>Local Storage</h1>
+
+<ol id ="list">
+<table id="olle"></table>
+    
+<script>
+
+// localStorage spara alltid strängar
+
+localStorage.setItem('name', 'Daniel');
+localStorage.setItem('age', '30');
+localStorage.setItem('mobile', '0704943141');
+localStorage.setItem('email', 'daniel.hessling@gmail.com');
+
+// Spara en array i localStorage
+let myArray = ['A', 'B', 'C'];
+// Försök 1 - Skapa key/value direkt
+localStorage.setItem('myArray', myArray); // Vår array sparas som sträng
+console.log(localStorage);
+let arrayFromLS = localStorage.getItem('myArray');
+console.log(typeof(arrayFromLS));
+for (const i of arrayFromLS) {
+    console.log(i); // Vi itererar över alla tecken i strängen !!!
+}
+
+// Lösning
+// Konvertera alltid en array till JSON innan du lagrar i LS
+
+let myJSON = JSON.stringify(myArray);
+console.log(myJSON);
+
+localStorage.setItem('myArray', myJSON);
+console.table(localStorage);
+
+// Hämta en array från LS
+myArray = localStorage.getItem('myArray');
+console.log(myArray);
+console.log(typeof myArray);
+// Konvertera tillbaka från en JSON-sträng till en array
+myArray = JSON.parse(myArray);
+console.log(myArray);
+console.log(typeof myArray);
+// Vi har nu en array
+myArray.forEach(v => console.log(v));
+
+// Spara objekt i LS
+let myObj = {
+    first: 'A',
+    second: 'B',
+    third: 'C'
+};
+
+// Försök 1: Spara objektet direkt i LS
+localStorage.setItem('myObj', myObj); // FEL! - ERROR
+console.log(localStorage.getItem('myObj')); // => "[object Object]"
+
+// Lösning: Konvertera objektet till en JSON-sträng
+let myJSON2 = JSON.stringify(myObj);
+// Nu kan vi spara objektet i LS utan problem
+localStorage.setItem('myObj', myJSON2);
+console.table(localStorage);
+
+// Hämta objektet från LS
+myObj = JSON.parse(localStorage.getItem('myObj'));
+
+console.table(myObj);
+
+</script>
+    
+</body>
+</html>

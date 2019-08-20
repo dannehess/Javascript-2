@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta charset="UTF-8">
+    <title>jQuery Ajax</title>
+
+    <style>
+
+        /* Json-fil objekt måste ha hartänder */
+
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Ajax - Demo 2</h1>
+    <h2>Läs en JSON-fil</h2>
+    <p id="demo"></p>
+
+    <h3>Hämta en JSON-sträng</h3>
+    <p id="demo1"></p>
+    
+    <h3>Hämta data från ett JSON-objekt</h3>
+    <p id="demo2"></p>
+
+    <script>
+
+        $(document).ready(function(){
+
+            /* Anonym callback-funktion */
+            /* Hämta hela filen */
+            $('#demo').load('demo.json', function(data){
+            });
+
+        /* Objekt */
+        $.getJSON('demo.json', function(data){
+            $('#demo2').html(data.name + "<br>" + data.email);
+
+       });
+            
+    }); // ready
+
+    // https://dog.ceo/dog-api/
+
+    </script>
+</body>
+
+</html>

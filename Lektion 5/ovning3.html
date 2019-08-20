@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <meta charset="UTF-8">
+    <title>Random user</title>
+
+    <style>
+
+        body{
+            font-family: verdana;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #name{
+            font-weight: bold;
+        }
+
+        .random-user{
+            padding: 20px;
+            width: 200px;
+            height: auto;
+            border: 1px solid #222222;
+            background-color: lightgreen;
+            text-transform: capitalize;
+        }
+
+        button{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dog API - Demo 1</h1>
+    <h1><a href="">Random user</a></h1>
+    <div class="random-user">
+    <p id="pic"></p>
+    <p id="name"></p>
+    <p id="age"></p>
+    <p id="city"></p>
+    <button id="email">Contact me</button>
+</div>
+    <script>
+
+    $(document).ready(function(){
+
+            $.getJSON('https://randomuser.me/api', function(data){
+
+                let person = data.results[0];
+                let pic = person;
+                let name = `${person.name.first} ${person.name.last}`;
+                let city = person.location.city;
+                let age = person.dob.age;
+                let email = person.location.city;
+
+                console.log(person);
+                $('#pic').html('<img src="' + person.picture.large + '">');
+                $('#name').text(name);
+                $('#age').text('Age: ' + age);
+                $('#city').text('City: ' + city);
+                $('#email').text('Contact me');
+            });
+
+    }); // ready
+    
+    
+    /*
+    // Lägg till tom img-sträng
+    // # i länk
+    // Click-event - $('h1').on('click', 'a', function(){}
+    // Trigger - $('a').trigger('click');
+    // Ingen reload - event.preventDefault();
+    });
+    
+
+    function getImage(){
+        $.getJSON('https://dog.ceo/api/breeds/image/random', function(data){   
+            $('h1').on('click', 'a', function(){
+                console.log(data.message); // Sökväg till en bild
+                    $('img).attr('src', data.message)
+        }};
+    }
+        });
+
+        getImage();
+        
+        // Simulating a click in jQuery/JavaScript on a link
+        // Trigger - $('a').trigger('click');
+    */
+
+
+
+    /*   
+
+        <a href="">Random user</a>
+
+    <img src="" id="blablej">
+    
+
+    $(document).ready(function(){
+        getUser();
+    });
+
+
+showUser(data.results[0]){
+    blabla
+}
+
+
+    function getUser(){
+        $.ajax({
+            url: "https://randomuser.me/api",
+            dataType: "json",
+            success: function(data){
+                let user = data.results[0];
+                console.log(user);
+                showUser(user);
+            }
+        });
+    }   
+
+    function showUser(user){
+        console.log(user);
+        $('.card-img-top').attr('src), user.picture.large);
+        $('.card-title').text(user.name.first + ' ' + user.name.last);
+        $('.card-age').text('Age: ' + user.dob.age);
+        $('.card-city').text('City: ' + user.location.city);
+        $('.card).hide().fadeIn(1000);
+    }
+
+    $('#get-user').on('click', 'a' function(e){
+        e.preventDefault();
+        getUser();
+    });
+    
+    */
+
+    </script>
+</body>
+
+</html>

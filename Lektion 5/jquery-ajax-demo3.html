@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta charset="UTF-8">
+    <title>Dog API</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Dog API - Demo 1</h1>
+    <h3>Hämta en lista över alla hundraser från</h3>
+    <p id="demo"></p>
+    
+    <a href="https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a>
+    
+    <ol id="breeds"></ol>
+
+    <script>
+
+    $(document).ready(function(){
+
+        $.getJSON('https://dog.ceo/api/breeds/list/all', function(data){
+
+            // $(''#breed).html(data.message); // OBS! Funkar inte
+            $.each(data.message, function(key, value){
+                console.log(key);
+                $('#breeds').append('<li>' + key + '</li>');
+                // Extra övning: Visa delraser
+            });
+        });
+    }); // ready
+
+
+    </script>
+</body>
+
+</html>

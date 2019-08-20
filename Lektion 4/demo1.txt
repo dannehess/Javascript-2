@@ -1,0 +1,2 @@
+<h3>Filen: demo1.txt är en enkel textfil.</h3>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error numquam incidunt culpa sapiente! Placeat incidunt, commodi quos, magnam fugit maxime autem ipsum aperiam, deserunt adipisci illo alias doloremque. Deserunt reprehenderit aliquam soluta maiores illo amet dolore laborum tenetur beatae dicta.

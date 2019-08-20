@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta charset="UTF-8">
+    <title>Dog API</title>
+
+    <style>
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Dog API - Demo 1</h1>
+    <h1><a href="">Random dog</a></h1>
+    <div id="demo"></div>
+
+    <a href="https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a>
+    
+
+    <script>
+
+    $(document).ready(function(){
+
+        function showIt(){
+            $.getJSON('https://dog.ceo/api/breeds/image/random', function(data){
+                console.log(data);
+                $('#demo').html('<img src="'+ data.message +'">');
+            });
+        }    
+        
+        $('a').on('click', showIt);
+        
+        showIt();
+        
+        
+    }); // ready
+    
+    
+    /*
+    // Lägg till tom img-sträng
+    // # i länk
+    // Click-event - $('h1').on('click', 'a', function(){}
+    // Trigger - $('a').trigger('click');
+    // Ingen reload - event.preventDefault();
+    });
+    
+
+    function getImage(){
+        $.getJSON('https://dog.ceo/api/breeds/image/random', function(data){   
+            $('h1').on('click', 'a', function(){
+                console.log(data.message); // Sökväg till en bild
+                    $('img).attr('src', data.message)
+        }};
+    }
+        });
+
+        getImage();
+        
+        // Simulating a click in jQuery/JavaScript on a link
+        // Trigger - $('a').trigger('click');
+    */
+
+    </script>
+</body>
+
+</html>

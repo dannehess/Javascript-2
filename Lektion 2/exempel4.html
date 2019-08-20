@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>jQuery Demo 4</title>
+
+    <style>
+
+        #demo1{
+            display: none;
+            background-color: lightblue;
+            margin-top: 20px;
+            margin-bottom: 80px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .demo2{
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+<body class="container">
+
+    <h1>Inköpslista</h1>
+    <input type="text" id="item">
+    <button id="add">Lägg till</button>
+
+    <ul id="foodList"></ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js-demo-03.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+        let $item = $('#item').val();
+        let $add = $('#add');
+
+        $($add).click(function(){
+            $('#foodList').html('<li>' +  + '</li>');
+        });
+
+        }); // ready
+
+    </script>
+
+</body>
+
+</html>
